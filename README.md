@@ -21,6 +21,5 @@ https://mellowmorgan.github.io/infinite-wordle/
 * Enter **cd infinite-wordle**
 * Enter **npm start**
 * Navigate to "localhost:3000" in your web browser.
-Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
