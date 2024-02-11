@@ -171,7 +171,7 @@ function App() {
   return (
 
     <div>
-      <nav><span class="nav-center">Wordlette</span></nav>
+      <nav><span class="nav-center">Infinite Wordle</span></nav>
    
       <div class="holder-lines" >
         {sixLines}
