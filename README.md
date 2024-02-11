@@ -17,9 +17,9 @@ https://mellowmorgan.github.io/infinite-wordle/
 
 ## Installation instructions
 
-* In terminal, paste and enter this: "git clone https://github.com/mellowmorgan/infinite-wordle.git"
-* Enter "cd infinite-wordle"
-* Enter "npm start"
+* In terminal, paste and enter: **git clone https://github.com/mellowmorgan/infinite-wordle.git**
+* Enter **cd infinite-wordle**
+* Enter **npm start**
 * Navigate to "localhost:3000" in your web browser.
 Getting Started with Create React App
 
