@@ -23,3 +23,7 @@ https://mellowmorgan.github.io/infinite-wordle/
 * Navigate to "localhost:3000" in your web browser.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## License
+
+[MIT](https://opensource.org/license/mit/) Copyright(c) 2024 Morgan Waites
