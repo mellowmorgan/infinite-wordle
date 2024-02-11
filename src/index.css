@@ -66,45 +66,6 @@ body {
   white-space: nowrap;
 
 }
-
-@media screen and (max-width: 400px) {
-  .keyboard-keys {
-    font-size: 1.2rem;
-    border-radius: 4px;
-    border: none;
-    height:52px;
-    min-width:1.8rem;
-    margin:3px;
-  }
-  .enter-delete{
-    font-size:0.8rem;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .letter-tiles{
-    margin: 3px;
-    font-size:1.4rem;
-    font-weight: bold;
-    text-align: center;
-    line-height: 32px;
-    height: 35px;
-    width: 35px;
-  }
-  .keyboard-keys {
-    font-size: .8rem;
-  border-radius: 4px;
-  border: none;
-  height:40px;
-  min-width:1.4rem;
-  margin:1.8px;
-  }
-  .enter-delete{
-    font-size:0.6rem;
-  }
-}
-
-
 nav{
   margin:auto;
   padding-top: 6px; 
@@ -116,9 +77,61 @@ nav{
 .nav-center{
   font-weight: bolder;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 1.9rem;
+  font-size: 1.8rem;
 
 }
+
+@media screen and (max-width: 500px) {
+  .keyboard-keys {
+    font-size: 1.1rem;
+    border-radius: 4px;
+    border: none;
+    height:52px;
+    min-width:1.8rem;
+    margin:2px;
+  }
+  .enter-delete{
+    font-size:0.7rem;
+  }
+  .letter-tiles{
+    font-size:1.5rem;
+    line-height: 46px;
+    margin:2px;
+    height: 48px;
+    width: 48px;
+  }
+  .nav-center{
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .letter-tiles{
+    margin: 2px;
+    font-size:1.1rem;
+    font-weight: bold;
+    text-align: center;
+    line-height: 33px;
+    height: 35px;
+    width: 35px;
+  }
+  .keyboard-keys {
+    font-size: .9rem;
+  border-radius: 4px;
+  border: none;
+  height:35px;
+  min-width:1.2rem;
+  margin:1px;
+  }
+  .enter-delete{
+    font-size:0.5rem;
+  }
+  .nav-center{
+    font-size: 1.4rem;
+  }
+
+}
+
 
 
 code {
