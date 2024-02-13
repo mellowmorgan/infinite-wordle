@@ -4,10 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Helmet} from "react-helmet";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Helmet>
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                <title>Infinite Wordle</title>
+                <link rel="canonical" href="http://mysite.com/example" />
+            </Helmet>
     <App />
   </React.StrictMode>
 );

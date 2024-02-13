@@ -92,6 +92,11 @@ nav{
     height:52px;
     min-width:1.8rem;
     margin:2px;
+    color: black;
+    font-weight:bold;
+    background-color: #dadce3;
+    display: inline-block;
+    vertical-align:top; 
   }
   .enter-delete{
     font-size:0.7rem;
@@ -102,6 +107,13 @@ nav{
     margin:2px;
     height: 48px;
     width: 48px;
+    color: black;
+    margin: 3px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid lightgray;
+    vertical-align:top; 
   }
   .nav-center{
     font-size: 1.6rem;
@@ -117,6 +129,11 @@ nav{
     line-height: 33px;
     height: 35px;
     width: 35px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid lightgray;
+    vertical-align:top; 
   }
   .keyboard-keys {
     font-size: .9rem;
@@ -125,6 +142,11 @@ nav{
   height:35px;
   min-width:1.2rem;
   margin:1px;
+  color: black;
+  font-weight:bold;
+  background-color: #dadce3;
+  display: inline-block;
+  vertical-align:top; 
   }
   .enter-delete{
     font-size:0.5rem;
