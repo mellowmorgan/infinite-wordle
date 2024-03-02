@@ -62,11 +62,11 @@ body {
   display: flex;
   width:100%;
   align-items: center;
-  justify-content: start;
+  align-self: center;
   flex-direction: column;
   overflow-x: auto;
   white-space: nowrap;
-
+  margin-bottom:30px;
 }
 nav{
   margin:auto;
