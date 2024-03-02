@@ -178,9 +178,9 @@ function App() {
       </div>
 
       <div class="holder-keyboard"> 
-        <div class="keyboad-line">{keyboardFirstLine }</div>
-        <div class="keyboad-line">{keyboardSecondLine }</div>
-        <div class="keyboad-line">{keyboardThirdLine }</div>
+        <div class="keyboard-line">{keyboardFirstLine }</div>
+        <div class="keyboard-line">{keyboardSecondLine }</div>
+        <div class="keyboard-line">{keyboardThirdLine }</div>
         <div>
         <button style={{display:"none"}} onClick={notify}></button>
         <ToastContainer position="top-center" autoClose={8000} hideProgressBar={true} closeOnClick theme="dark" />
