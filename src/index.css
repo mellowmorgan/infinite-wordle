@@ -90,10 +90,10 @@ nav{
     font-size: 1.1rem;
     border-radius: 4px;
     border: none;
-    min-width: 30px;
+    min-width: 2rem;
     height:52px;
     margin:2px;
-    color: orange;
+    color: rgb(190, 0, 174);
     font-weight:bold;
     background-color: #dadce3;
     display: inline-block;
