@@ -67,9 +67,6 @@ body {
 }
 
 .keyboard-line{
-  display:flex;
-  flex-direction: row;
-  width: 90%;
   align-items: center;
   justify-content: center;
 } 
