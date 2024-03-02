@@ -93,7 +93,7 @@ nav{
     min-width: 30px;
     height:52px;
     margin:2px;
-    color: black;
+    color: orange;
     font-weight:bold;
     background-color: #dadce3;
     display: inline-block;
@@ -143,7 +143,7 @@ nav{
   height:42px;
   min-width:25px;
   margin:1px;
-  color: black;
+  color: blue;
   font-weight:bold;
   background-color: #dadce3;
   display: inline-block;
