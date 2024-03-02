@@ -90,7 +90,7 @@ nav{
     font-size: 1.1rem;
     border-radius: 4px;
     border: none;
-    min-width: 2rem;
+    max-width:30px;
     height:52px;
     margin:2px;
     color: rgb(190, 0, 174);
@@ -101,6 +101,7 @@ nav{
   }
   .enter-delete{
     font-size:0.7rem;
+    max-width: none;
   }
   .letter-tiles{
     font-size:1.5rem;
@@ -141,7 +142,7 @@ nav{
   border-radius: 4px;
   border: none;
   height:42px;
-  min-width:25px;
+  max-width:25px;
   margin:1px;
   color: blue;
   font-weight:bold;
@@ -151,12 +152,18 @@ nav{
   }
   .enter-delete{
     font-size:0.5rem;
+    max-width: none;
   }
   .nav-center{
     font-size: 1.4rem;
   }
 
 }
+
+.del{
+max-width: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
