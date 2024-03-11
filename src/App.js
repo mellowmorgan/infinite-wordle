@@ -23,7 +23,7 @@ function App() {
 
   const [popularWords, setPopularWords] = useState(words.getMostPopular(8000).filter((popularWord) => popularWord.length === 5 && !(nameListMale.has(popularWord)) && !(nameListFemale.has(popularWord))));
   const [correctWord, setCorrectWord] = useState(popularWords[Math.floor(Math.random()*popularWords.length)]);
-
+  //secret
   function handleClick(selectedLetter) {
     if (selectedLetter === "DEL" && spot>1){ 
       letterSet(spot-1,'');
