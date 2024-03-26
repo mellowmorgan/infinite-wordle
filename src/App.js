@@ -4,6 +4,7 @@ import { useState } from 'react';
 import {words} from 'popular-english-words'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ConfettiExplosion from 'react-confetti-explosion';
 
 function App() {
 
@@ -115,7 +116,7 @@ function App() {
 
   function keyboardKeySet(letter, color){
     const keyboardKey = document.getElementById(letter.toUpperCase());
-    if(color=="rgb(88, 163, 81)" || (keyboardKey.style.backgroundColor !== "rgb(88, 163, 81)")){ 
+    if(color==="rgb(88, 163, 81)" || (keyboardKey.style.backgroundColor !== "rgb(88, 163, 81)")){ 
       keyboardKey.style.backgroundColor = color;
     }
   }
@@ -151,7 +152,7 @@ function App() {
     <button disabled={disabled} id={key} class="keyboard-keys" onClick={() => handleClick(key)}>{key}</button>
   );
   const keyboardThirdLine = keyboardKeys.slice(19, keyboardKeys.length).map((key) =>{
-    if (key == "DEL" || key == "ENTER"){
+    if (key === "DEL" || key === "ENTER"){
       return <button disabled={disabled} id={key} class="keyboard-keys enter-delete" onClick={() => handleClick(key)}>{key}</button>
     }else{
       return <button disabled={disabled} id={key} class="keyboard-keys" onClick={() => handleClick(key)}>{key}</button>
