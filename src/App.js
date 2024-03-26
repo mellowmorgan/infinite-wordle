@@ -8,23 +8,30 @@ import ConfettiExplosion from 'react-confetti-explosion';
 
 function App() {
 
+  const fineMaleNames = 
+    ['any', 'art', 'august', 'bank', 'bar', 'barn', 'base', 'bat', 'bear', 'bent',        'bill', 'bond', 'bone', 'boy', 'car', 'care', 'case', 'chance', 'chase', 'chip', 'clay', 'court', 'cross', 'dean', 'drew', 'early', 'even', 'fair', 'far', 'field', 'ford', 'forest', 'free', 'gene', 'gray', 'gun', 'had', 'hall', 'hill', 'hunt', 'hunter', 'jack', 'job', 'land', 'lane', 'law', 'lay', 'lion', 'major', 'man', 'mark', 'mile', 'mill', 'muffin', 'my', 'north', 'page', 'park', 'pen', 'port', 'price', 'read', 'red', 'rice', 'rich', 'ring', 'rock', 'rocky', 'rod', 'salmon', 'sanders', 'saw', 'say', 'see', 'shadow', 'sky', 'son', 'town', 'trace', 'trip', 'wait', 'wash', 'way', 'west', 'will', 'win', 'wolf', 'wood', 'worth', 'yard']
+  const fineFemaleNames = 
+    ['bee', 'bell', 'bill', 'bird', 'candy', 'carry', 'dawn', 'deny', 'doll', 'dot', 'else', 'fern', 'gene', 'glad', 'gray', 'happy', 'honor', 'hope', 'joy', 'lane', 'lucky', 'may', 'melody', 'muffin', 'page', 'pen', 'pet', 'rose', 'row', 'scarlet', 'star', 'storm', 'vanessa', 'velvet']
+  const spuriousWordsFound = ['cfded', 'wsdot']
+  
   const namesMale = require( '@stdlib/datasets-male-first-names-en' );
   const namesFemale = require( '@stdlib/datasets-female-first-names-en' );
-  const [nameListMale, setNameListMale] = useState(new Set(namesMale().map((name)=> name.toLowerCase())));
+  const [nameListMale, setNameListMale] = useState(new Set(namesMale().map((name)=> name.toLowerCase()).filter((name) => !fineMaleNames.includes(name))));
+  const [nameListFemale, setNameListFemale] = useState(new Set(namesFemale().map((name)=> name.toLowerCase()).filter((name) => !fineFemaleNames.includes(name))));
   
-  const [nameListFemale, setNameListFemale] = useState(new Set(namesFemale().map((name)=> name.toLowerCase())));
   const [word, setWord] = useState('');
-  const [dictionary, setDictionary] = useState( words.getMostPopular(100000).filter((word) => word.length === 5 && !(nameListMale.has(word)) && !(nameListFemale.has(word))));
+
+  //sanitize our dictionary
+  const [dictionary, setDictionary] = useState(words.getMostPopular(80000).filter((word) => word.length === 5 && ((!spuriousWordsFound.includes(word)) && (!nameListMale.has(word) && !nameListFemale.has(word)))));
 
   const [tries, setTries] = useState(0);
   const [spot, setSpot] = useState(1);
-
+  const [gameWon, setGameWon] = useState(false)
   const keyboardKeys = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "ENTER", "Z", "X", "C", "V", "B", "N", "M", "DEL"];
   const [disabled, setDisabled] = useState(false);
+ 
+  const [correctWord, setCorrectWord] = useState(dictionary.slice(0,1500)[Math.floor(Math.random()*1500)]);
 
-  const [popularWords, setPopularWords] = useState(words.getMostPopular(8000).filter((popularWord) => popularWord.length === 5 && !(nameListMale.has(popularWord)) && !(nameListFemale.has(popularWord))));
-  const [correctWord, setCorrectWord] = useState(popularWords[Math.floor(Math.random()*popularWords.length)]);
-  //secret
   function handleClick(selectedLetter) {
     if (selectedLetter === "DEL" && spot>1){ 
       letterSet(spot-1,'');
@@ -49,6 +56,9 @@ function App() {
       notify("You got it!");
       transformTiles();
       disableKeyboard();
+      setTimeout(function() {
+        setGameWon(true)
+    }, 2000);
     }else{
       if (!(dictionary.includes(word.toLowerCase()))){
         notify("NOT AN ACCEPTED WORD");
@@ -186,7 +196,7 @@ function App() {
         <div class="keyboard-line">{keyboardThirdLine }</div>
         <div>
         <button style={{display:"none"}} onClick={notify}></button>
-        <ToastContainer position="top-center" autoClose={8000} hideProgressBar={true} closeOnClick theme="dark" />
+        <ToastContainer position="top-center" autoClose={2500} hideProgressBar={true} closeOnClick theme="dark" style={{ fontSize:"16px", top:0, display:"flex", justifyContent:"center" }}  />
       </div>
       </div>
     </div>
