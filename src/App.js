@@ -172,8 +172,10 @@ function App() {
   return (
 
     <div>
-      <nav><span class="nav-center">Infinite Wordle</span></nav>
-   
+      <nav>
+        <span class="nav-center">Infinite Wordle</span>
+      </nav>
+      <div style={{ display:"flex", justifyContent:"center"}}>{gameWon && <ConfettiExplosion />}</div>
       <div class="holder-lines" >
         {sixLines}
       </div>
