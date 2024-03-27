@@ -74,9 +74,8 @@ function App() {
       notify("You got it!");
       transformTiles();
       disableKeyboard();
-      setTimeout(function() {
-        setGameWon(true)
-    }, 1000);
+      setGameWon(true)
+    
     }else{
       if (!(dictionary.includes(word.toLowerCase()))){
         notify("NOT AN ACCEPTED WORD");
