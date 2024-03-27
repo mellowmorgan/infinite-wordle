@@ -10,9 +10,9 @@ import raw from './wordlist.txt';
 function App() {
 
   const fineMaleNames = 
-    ['any', 'art', 'august', 'bank', 'bar', 'barn', 'base', 'bat', 'bear', 'bent', 'bill', 'bond', 'bone', 'boy', 'car', 'care', 'case', 'chance', 'chase', 'chip', 'clay', 'court', 'cross', 'dean', 'drew', 'early', 'even', 'fair', 'far', 'field', 'ford', 'forest', 'free', 'gene', 'gray', 'gun', 'had', 'hall', 'hill', 'hunt', 'hunter', 'jack', 'job', 'land', 'lane', 'law', 'lay', 'lion', 'major', 'man', 'mark', 'mile', 'mill', 'muffin', 'my', 'north', 'page', 'park', 'pen', 'port', 'price', 'read', 'red', 'rice', 'rich', 'ring', 'rock', 'rocky', 'rod', 'salmon', 'sanders', 'saw', 'say', 'see', 'shadow', 'sky', 'son', 'town', 'trace', 'trip', 'wait', 'wash', 'way', 'west', 'will', 'win', 'wolf', 'wood', 'worth', 'yard']
+    ['any', 'art', 'august', 'bank', 'bar', 'barn', 'base', 'bat', 'bear', 'bent', 'bill', 'bond', 'bone', 'boy', 'car', 'care', 'case', 'chance', 'chase', 'chip', 'clay', 'court', 'cross', 'dean', 'drew', 'early', 'even', 'fair', 'far', 'flint', 'field', 'ford', 'forest', 'free', 'gene', 'gray', 'grace', 'gun', 'had', 'hall', 'hill', 'hunt', 'hunter', 'jack', 'job', 'land', 'lane', 'law', 'lay', 'lance', 'lion', 'major', 'man', 'mark', 'mile', 'mill', 'muffin', 'my', 'north', 'page', 'park', 'pen', 'port', 'price', 'read', 'red', 'rice', 'rich', 'ring', 'rock', 'rocky', 'rod', 'salmon', 'sanders', 'saw', 'say', 'see', 'shadow', 'sky', 'son', 'town', 'trace', 'trip', 'wait', 'wash', 'way', 'west', 'will', 'win', 'wolf', 'wood', 'worth', 'yard']
   const fineFemaleNames = 
-    ['bee', 'bell', 'bill', 'bird', 'candy', 'carry', 'dawn', 'deny', 'doll', 'dot', 'else', 'fern', 'gene', 'glad', 'gray', 'happy', 'honor', 'hope', 'joy', 'lane', 'lucky', 'may', 'melody', 'muffin', 'page', 'pen', 'pet', 'rose', 'row', 'scarlet', 'star', 'storm', 'vanessa', 'velvet']
+    ['bee', 'bell', 'bill', 'bird', 'candy', 'carry', 'dawn', 'deny', 'doll', 'dot', 'else', 'fern', 'gene', 'glad', 'grace', 'gray', 'happy', 'honor', 'hope', 'joy', 'lane', 'lucky', 'may', 'melody', 'muffin', 'page', 'pen', 'pet', 'rose', 'row', 'scarlet', 'star', 'storm', 'vanessa', 'velvet']
   const spuriousWordsFound = ['cfded', 'wsdot','moran', 'leeds', 'miami', 'boise', 'paris']
   
   const namesMale = require( '@stdlib/datasets-male-first-names-en' );
@@ -25,7 +25,7 @@ function App() {
   const [word, setWord] = useState('');
 
   //sanitize our dictionary
-  const [dictionary, setDictionary] = useState(words.getMostPopular(80000).filter((word) => word.length === 5 && ((!spuriousWordsFound.includes(word)) && (!nameListMale.has(word) && !nameListFemale.has(word)))));
+  const [dictionary, setDictionary] = useState(words.getMostPopular(100000).filter((word) => word.length === 5 && ((!spuriousWordsFound.includes(word)) && (!nameListMale.has(word) && !nameListFemale.has(word)))));
 
   const [tries, setTries] = useState(0);
   const [spot, setSpot] = useState(1);
@@ -50,7 +50,7 @@ function App() {
     }
   });
 
-function handleClick(selectedLetter) {
+  function handleClick(selectedLetter) {
     if (selectedLetter === "DEL" && spot>1){ 
       letterSet(spot-1,'');
       setSpot(spot-1)
@@ -76,7 +76,7 @@ function handleClick(selectedLetter) {
       disableKeyboard();
       setTimeout(function() {
         setGameWon(true)
-    }, 1500);
+    }, 1000);
     }else{
       if (!(dictionary.includes(word.toLowerCase()))){
         notify("NOT AN ACCEPTED WORD");
@@ -203,7 +203,7 @@ function handleClick(selectedLetter) {
       <nav>
         <span class="nav-center">Infinite Wordle</span>
       </nav>
-      <div style={{ display:"flex", justifyContent:"center"}}>{gameWon && <ConfettiExplosion particleCount={300} />}</div>
+      <div style={{ display:"flex", justifyContent:"center"}}>{gameWon && <ConfettiExplosion height={'100vh'} width={window.innerWidth} particleCount={200} />}</div>
       <div class="holder-lines" >
         {sixLines}
       </div>
