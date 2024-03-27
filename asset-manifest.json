@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/infinite-wordle/static/css/main.6fe9d916.css",
-    "main.js": "/infinite-wordle/static/js/main.75bf9200.js",
+    "main.js": "/infinite-wordle/static/js/main.a9a3a1ae.js",
     "static/js/453.864a90eb.chunk.js": "/infinite-wordle/static/js/453.864a90eb.chunk.js",
     "static/media/wordlist.txt": "/infinite-wordle/static/media/wordlist.6ace1dbf5cae3fc37fc3.txt",
     "static/media/logo.svg": "/infinite-wordle/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/infinite-wordle/index.html",
     "main.6fe9d916.css.map": "/infinite-wordle/static/css/main.6fe9d916.css.map",
-    "main.75bf9200.js.map": "/infinite-wordle/static/js/main.75bf9200.js.map",
+    "main.a9a3a1ae.js.map": "/infinite-wordle/static/js/main.a9a3a1ae.js.map",
     "453.864a90eb.chunk.js.map": "/infinite-wordle/static/js/453.864a90eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6fe9d916.css",
-    "static/js/main.75bf9200.js"
+    "static/js/main.a9a3a1ae.js"
   ]
 }
