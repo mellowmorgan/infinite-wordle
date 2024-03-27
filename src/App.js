@@ -74,8 +74,9 @@ function App() {
       notify("You got it!");
       transformTiles();
       disableKeyboard();
-      setGameWon(true)
-    
+      setTimeout(function() {
+        setGameWon(true)
+    }, 1000);
     }else{
       if (!(dictionary.includes(word.toLowerCase()))){
         notify("NOT AN ACCEPTED WORD");
@@ -202,7 +203,7 @@ function App() {
       <nav>
         <span class="nav-center">Infinite Wordle</span>
       </nav>
-      <div style={{ display:"flex", justifyContent:"center"}}>{gameWon && <ConfettiExplosion height={'100vh'} width={window.innerWidth} particleCount={200} />}</div>
+      <div style={{ display:"flex", justifyContent:"center", WebkitTransform: "translate3d(0,0,0)"}}>{gameWon && <ConfettiExplosion height={'100vh'} width={window.innerWidth} particleCount={200} />}</div>
       <div class="holder-lines" >
         {sixLines}
       </div>
